@@ -69,11 +69,11 @@
             transform: scale(1.5);
         }
         .dark .tech-icon:hover {
-            filter: invert(1);
+            /*filter: invert(1);*/
             transform: scale(1.5);
         }
         .dark .tech-icon:hover {
-            filter: invert(1);
+            /*filter: invert(1);*/
         }
         .squircle {
             width: 256px;
@@ -102,6 +102,9 @@
                 width: 260px;
                 height: 260px;
             }
+        }
+        .font-about-me {
+          font-family: 'Roboto', sans-serif;
         }
         .font-space-mono {
             font-family: 'Space Mono', monospace;
@@ -274,6 +277,202 @@
             color: #e2e8f0;
         }
     </style>
+    <style>
+        a:hover {
+            color: #007AFF; /* Color change on hover */
+            text-decoration: none; /* Optional: remove underline on hover */
+            font-weight: bold; /* Optional: make text bold on hover */
+        }
+    </style>
+    <!-- Style section to add text when hovering skills -->
+    <style>
+      .skills-container {
+        max-width: 1000px; 
+      }
+
+      .skill-container {
+          display: inline-block;
+          position: relative;
+          text-align: center;
+          margin: 5px;
+      }
+
+      .skill-container img {
+          display: block;
+          margin: 0 auto;
+          transition: transform 0.3s ease, filter 0.3s ease;
+          filter: grayscale(100%);
+      }
+
+      .skill-container:hover img {
+          transform: scale(1.5); /* Expands the image more */
+          filter: grayscale(0%);
+      }
+
+      .skill-text {
+          position: absolute;
+          bottom: -45px; /* Move the text below the container */
+          left: 50%;
+          transform: translateX(-50%);
+          color: black;
+          font-size: 18px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          white-space: nowrap;
+      }
+
+      .dark .skill-text {
+            filter: invert(1);
+      }
+
+      .skill-container:hover .skill-text {
+          opacity: 1; /* Show text on hover */
+      }
+
+      .small-font {
+        font-size: 14px; /* Smaller font size for UnrealEngine */
+        white-space: nowrap;
+      }
+
+      /* Container for the Languages section */
+    .languages-container {
+        max-width: 600px; /* Adjust width if needed */
+        margin: -50px auto;
+        padding: 0 15px;
+    }
+
+    /* Style for each language icon and text */
+    .language-container {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        margin: 5px;
+    }
+
+    .language-container img {
+        display: block;
+        width: 64px; /* Set a fixed size for language icons */
+        height: 64px;
+        margin: 0 auto;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        filter: grayscale(100%);
+    }
+
+    .language-container:hover img {
+        transform: scale(1.5); /* Slight zoom effect on hover */
+        filter: grayscale(0%); /* Remove grayscale on hover */
+    }
+
+    .language-text {
+        margin-top: 10px;
+        color: black;
+        font-size: 14px;
+    }
+
+    .dark .language-text {
+        filter: invert(1);
+    }
+    
+    </style>
+
+    <!-- Timeline style-->
+    <style>
+    /* General Timeline container */
+    .timeline-container {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        padding: 20px 0;
+    }
+
+    /* Timeline structure */
+    .timeline {
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    .timeline-event {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-left: 100px; /* Increase padding to make space for the larger logo */
+        position: relative;
+    }
+
+    /* Line connecting the timeline events */
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -40px;
+        width: 2px;
+        background-color: #4a5969;
+        z-index: 0; /* Ensure the line is behind the logo */
+    }
+
+    /* Company logo styling */
+    .timeline-logo {
+        position: absolute;
+        top: 90px;
+        left: -80px;
+        width: 100px; /* Adjust the size as needed */
+        height: 100px;
+        object-fit: contain; /* Ensure the logo maintains its aspect ratio */
+        z-index: 1; /* Ensure the logo is above the timeline line */
+        transition: transform 0.3s ease, filter 0.3s ease; /* Add hover transition */
+    }
+
+    .timeline-logo-link:hover .timeline-logo {
+    transform: scale(1.5); /* Slight zoom effect on hover */
+    filter: brightness(1.2); /* Slight brightness change on hover */
+    } 
+
+    /* Timeline content box */
+    .timeline-content {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        z-index: 2;
+    }
+
+    .dark .timeline-content {
+        filter: invert(1);
+    } 
+
+    .dark .timeline-content p {
+        filter: invert(1);
+        color: white; /* Make the description text white in dark mode */
+    } 
+
+    .dark .timeline-content ul {
+        filter: invert(1);
+        color: white; /* Make the description text white in dark mode */
+    } 
+
+    .timeline-event:hover .timeline-content {
+        transform: scale(1.05); /* Slight zoom effect on hover */
+    }
+
+    /* Styling for timeline date */
+    .timeline-company {
+        font-size: 17px;
+        color: #666;
+    }
+
+    .timeline-date {
+        font-size: 14px;
+        color: #666;
+    }
+
+    /* Styling for timeline text */
+    .timeline h3 {
+        color: #333;
+    }
+    </style>
 </head>
 <body class="bg-light dark:bg-dark text-dark dark:text-white min-h-screen flex flex-col font-['Inter'] transition-colors duration-300"></body>
     <div class="absolute top-8 right-8 z-10">
@@ -297,15 +496,35 @@
 
                 <!-- Buttons -->
                 <div class="flex justify-center space-x-4 mb-12">
-                    <a href="https://github.com/lucasjsch/" class="button button-filled flex items-center space-x-2">
-                        <span>Github</span>
-                        <i data-lucide="github" class="w-5 h-5"></i>
-                    </a>
-                    <a href="mailto:lucas.scheinkerman@gmail.com" class="button button-outlined flex items-center space-x-2">
-                        <span>Contact Me</span>
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                    </a>
+                  <a href="https://www.linkedin.com/in/lucas-scheinkerman/" class="button button-filled flex items-center space-x-2">
+                    <span>LinkedIn</span>
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                  <a href="https://github.com/lucasjsch/" class="button button-filled flex items-center space-x-2">
+                    <span>Github</span>
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="mailto:lucas.scheinkerman@gmail.com" class="button button-outlined flex items-center space-x-2">
+                    <span>Contact Me</span>
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a href="assets/CV.pdf" download class="button button-outlined flex items-center space-x-2">
+                  <span>Get my CV</span>
+                  <i data-lucide="download" class="w-5 h-5"></i>
+                </a>
                 </div>
+
+                <br><br>
+                <div class="flex justify-center space-x-4 mb-12 ml-[-60px]">
+                  <i data-lucide="map-pin" class="w-10 h-7"></i>
+                  <span>Buenos Aires, Argentina</span>
+                </div>
+
+                <div class="flex justify-center space-x-4 mb-12 ml-[-60px]">
+                  <i data-lucide="graduation-cap" class="w-10 h-7"></i>
+                  <span>University of Buenos Aires</span>
+                </div>
+
             </div>
             <!-- Add the chevron-down icon -->
             <div class="chevron-down">
@@ -316,28 +535,29 @@
         <!-- About Me Section -->
         <section id="about" class="section py-20 bg-gray-100 dark:bg-gray-900">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold mb-8 text-center font-garamond">About Me</h2>
+                <h2 class="text-3xl font-about-me mb-8 text-center font-bold">About Me</h2>
                 <div class="flex flex-col md:flex-row items-center md:items-start justify-center space-y-8 md:space-y-0 md:space-x-12">
                     <div class="squircle bg-gray-300 dark:bg-gray-700 flex-shrink-0">
-                        <img src="assets/dp.png" alt="Lucas Scheinkerman" class="w-full h-full object-cover" />
+                        <img src="assets/dp3.png" alt="Lucas Scheinkerman" class="w-full h-full object-cover" />
                     </div>
                     <div class="max-w-2xl text-center md:text-left">
-                        <p class="about-text font-space-mono">
-                            Hi there! 👋 I'm a Software Engineer from Argentina with 4+ years of experience.
+                        <p class="about-text font-about-me">
+                            Hi there! I'm a Software Engineer with 4+ years of experience.
                         </p>
                         <br>
-                        <p class="about-text font-space-mono">
-                            Currently working as Robotics Simulation Engineer at Unreal Empowerment, helping to simulate the (yet) Unreal!
+                        <p class="about-text font-about-me">
+                          Currently working as Robotics Simulation Engineer at 
+                          <a href="https://www.linkedin.com/company/unreal-empowerment/" target="_blank">Unreal Empowerment</a>,
+                          helping to simulate the (yet) Unreal!
                         </p>
                         <br>
-                        <p class="about-text font-space-mono">
-                            Always looking for new awesome technical challenges, eager to learn new things and do meaningful work that impacts positively in our world. I love to learn new stuff, understand how complex systems work, and transform theoretical ideas into real things. Translated into my work, I love all aspects of complex systems design and implementation.
+                        <p class="about-text font-about-me">
+                          Always looking for new awesome technical challenges, eager to learn new things and do meaningful work that impacts positively in our world. I love to learn new stuff, understand how complex systems work, and transform theoretical ideas into real things. Translated into my work, I love all aspects of complex systems design and implementation.
                         </p>
                         <br>
-                        <p class="about-text font-space-mono">
-                            From coding low-level C routines, to solving high-level problems using the most suitable data structures and algorithms, I find exciting each and everyone of the layers.
+                        <p class="about-text font-about-me">
+                          From coding low-level C routines, to solving high-level problems using the most suitable data structures and algorithms, I find exciting each and everyone of the layers.
                         </p>
-                        <br>
                     </div>
                 </div>
             </div>
@@ -345,22 +565,106 @@
 
         <!-- Skills Section -->
         <section id="skills" class="section py-20">
-            <div class="container mx-auto px-8 sm:px-16">
-                <h2 class="text-3xl font-bold mb-12 text-center font-space-mono">What I fiddle with....</h2>
-                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-8 justify-items-center">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/cplusplus.svg" alt="C++" class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/linux.svg" alt="Linux" class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/cmake.svg" alt="CMake" class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/python.svg" alt="Python" class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.14.0/icons/android.svg" alt="Android" class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.14.0/icons/android.svg" alt="Unreal Engine" class="tech-icon">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.14.0/icons/android.svg" alt="Java" class="tech-icon">
+            <div class="skills-container mx-auto px-8 sm:px-16">
+                <h2 class="text-3xl font-bold mb-12 text-center font-about-me">My main tech stack</h2>
+                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-8 justify-items-center">
+                    <div class="skill-container">
+                      <img src="assets/cpp.svg" class="tech-icon">
+                      <span class="skill-text">C++</span>
+                    </div>
+                    <div class="skill-container">
+                      <img src="assets/python.svg" class="tech-icon">
+                      <span class="skill-text">Python</span>
+                    </div>
+                    <div class="skill-container">
+                      <img src="assets/java.svg" class="tech-icon">
+                      <span class="skill-text">Java</span>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 gap-8 justify-items-center">
+                  <div class="skill-container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.14.0/icons/unrealengine.svg" class="tech-icon">
+                    <span class="skill-text">Unreal Engine</span>
+                  </div>
+                  <div class="skill-container">
+                    <img src="assets/ros.svg" class="tech-icon">
+                    <span class="skill-text">ROS</span>
+                  </div>
+                  <div class="skill-container">
+                    <img src="assets/android.svg" class="tech-icon">
+                    <span class="skill-text">Android</span>
+                  </div>
+                  <div class="skill-container">
+                    <img src="assets/docker.svg" class="tech-icon">
+                    <span class="skill-text">Docker</span>
+                  </div>
+                </div>
+                <br><br><br><br><br><br>
+                <h2 class="text-3xl font-bold mb-12 text-center font-about-me">Frameworks, libraries & tools</h2>
+                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 gap-8 justify-items-center">
+                  <div class="skill-container">
+                    <img src="assets/numpy.svg" class="tech-icon">
+                    <span class="skill-text">Numpy</span>
+                  </div>
+                  <div class="skill-container">
+                    <img src="assets/git.svg" class="tech-icon">
+                    <span class="skill-text">Git</span>
+                  </div>
+                  <div class="skill-container">
+                    <img src="assets/pandas.svg" class="tech-icon">
+                    <span class="skill-text">Pandas</span>
+                  </div>
+                  <div class="skill-container">
+                    <img src="assets/tensorflow.svg" class="tech-icon">
+                    <span class="skill-text">Tensorflow</span>
+                  </div>
+                </div>
+                
+                <br><br><br>
+                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 gap-8 justify-items-center">
+                  <div class="skill-container">
+                    <img src="assets/cmake.svg" class="tech-icon">
+                    <span class="skill-text">CMake</span>
+                  </div>
+                  <div class="skill-container">
+                    <img src="assets/ubuntu.svg" class="tech-icon">
+                    <span class="skill-text">Ubuntu</span>
+                  </div>
+                  <div class="skill-container">
+                    <img src="assets/bazel.svg" class="tech-icon">
+                    <span class="skill-text">Bazel</span>
+                  </div>
+                  <div class="skill-container">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/pytest.svg" class="tech-icon">
+                    <span class="skill-text">PyTest</span>
+                  </div>
                 </div>
             </div>
         </section>
 
+        <section id="languages" class="section py-20">
+          <div class="languages-container container mx-auto px-8 sm:px-16">
+              <h2 class="text-3xl font-bold mb-12 text-center font-about-me">Languages</h2>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-items-center">
+                  <div class="language-container">
+                      <img src="https://flagicons.lipis.dev/flags/4x3/ar.svg" alt="Spanish" class="language-icon">
+                      <span class="language-text">Spanish</span>
+                  </div>
+                  <div class="language-container">
+                      <img src="https://flagicons.lipis.dev/flags/4x3/us.svg" alt="English" class="language-icon">
+                      <span class="language-text">English</span>
+                  </div>
+                  <div class="language-container">
+                      <img src="https://flagicons.lipis.dev/flags/4x3/il.svg" alt="Hebrew" class="language-icon">
+                      <span class="language-text">Hebrew</span>
+                  </div>
+              </div>
+          </div>
+      </section>
+
         <!-- Navigation Links Section -->
-        <section id="links" class="section py-20">
+        <!--section id="links" class="section py-20">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold mb-12 text-center font-space-mono">Connect with me</h2>
                 <nav class="nav-container">
@@ -382,12 +686,60 @@
                     </a>
                 </nav>
             </div>
-        </section>
+        </section-->
+
+        <section id="timeline" class="section py-20 bg-gray-100 dark:bg-gray-900">
+          <div class="timeline-container container mx-auto px-8 sm:px-16">
+              <h2 class="text-3xl font-bold mb-12 text-center font-about-me">Work experience</h2>
+              
+              <div class="timeline">
+                  <div class="timeline-event">
+                      <a href="https://www.linkedin.com/company/unreal-empowerment" target="_blank" class="timeline-logo-link">
+                        <img src="assets/unreal_empowerment.png" alt="Unreal Empowerment" class="timeline-logo">
+                      </a>
+                      <div class="timeline-content">
+                          <h3 class="text-xl font-bold mb-2">Robotics simulation Engineer </h3>
+                          <span class="timeline-company"> Unreal Empowerment</span><br>
+                          <span class="timeline-date">June 2023 - Present</span>
+                          <p class="mt-2"> I develop simulation tools to generate artificial datasets for training
+                            AI-based aircraft navigation algorithms, ensuring compliance with specific requirements. <br><br>
+                            I use <b>C++</b> for core development and <b>Unreal Engine</b> for high-fidelity
+                            visual rendering, enhancing the realism of simulations. <br>
+                            Also I employ <b>Python</b> for implementing <b>ROS</b> nodes and handling API
+                            client calls, effectively integrating various technologies to produce
+                            robust and accurate training environments.</p>
+                      </div>
+                  </div>
+      
+                  <div class="timeline-event">
+                      <a href="https://ekumenlabs.com/" target="_blank" class="timeline-logo-link">
+                        <img src="assets/ekumen.png" alt="Ekumen" class="timeline-logo">
+                      </a>
+                      <div class="timeline-content">
+                          <h3 class="text-xl font-bold mb-2"> Infrastructure Software Engineer</h3>
+                          <span class="timeline-company"> Ekumen </span><br>
+                          <span class="timeline-date"> September 2019 - May 2022</span>
+                          <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2">
+                            <li>Designed and implemented data collection and ingestion <b>pipelines</b> using <b>Python</b>’s Apache Beam SDK, optimizing data processing workflows.</li>
+                            <li>Developed Android applications focused on sensor data collection, augmented reality (AR) features, and live data plotting using <b>Android Java</b> SDK and <b>C++</b>.</li>
+                            <li>In charge of code integration, testing, maintenance, and review to ensure high-quality software.</li>
+                            <li><b>Mentored new hires</b> in introductory-level <b>C++</b> training, enhancing their foundational programming skills.</li>
+                            <li><b>Conducted technical interviews</b>, assessing candidate qualifications and technical expertise.</li>
+                            <li>Participated in research group using <b>ROS</b> and <b>SLAM</b> techniques.</li>
+                        </ul>
+                      </div>
+                  </div>
+      
+                  <!-- Additional Timeline Events can go here -->
+              </div>
+          </div>
+      </section>
+      
        
         <!-- Projects Section -->
-        <section id="projects" class="section py-20 bg-gray-100 dark:bg-gray-900">
+        <section id="projects" class="section py-20">
             <div class="container mx-auto px-4 max-w-6xl projects-container">
-                <h2 class="text-3xl font-bold mb-12 text-center font-space-mono">Projects</h2>
+                <h2 class="text-3xl font-bold mb-12 text-center font-about-me">Projects</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Project tiles will be dynamically inserted here -->
                 </div>
@@ -396,8 +748,8 @@
 
     </main>
     <footer class="w-full mt-8 py-4 border-t border-gray-300 dark:border-gray-700">
-        <p class="text-center font-space-mono text-sm uppercase cursor-pointer footer-text" onclick="rickRoll()">
-            CLICK HERE TO GET OUT OF THE MATRIX :]
+        <p class="text-center font-space-mono text-sm uppercase cursor-pointer footer-text">
+            Designed by Lucas Scheinkerman, inspired by <a href="https://akashblsbrmnm.github.io/">https://akashblsbrmnm.github.io/</a>.
         </p>
     </footer>
     <script>

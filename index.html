@@ -487,16 +487,71 @@
             grid-template-columns: repeat(1, 1fr); /* 1 column on very small screens */
         }
     }
+
+        /* General styling for the navigation bar */
+    .navbar {
+        background-color: #333;
+        position: fixed; /* Make it stick to the top */
+        top: 0;
+        width: 100%;
+        z-index: 1000; /* Ensure the navbar is above other content */
+        padding: 10px 0;
+    }
+
+    /* Style the menu items */
+    .nav-menu {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        margin: 0 15px;
+    }
+
+    .nav-menu a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+        background-color: #555;
+        border-radius: 5px;
+    }
+
+    /* Add padding to the top of sections to avoid content being hidden behind the fixed navbar */
+    section {
+        padding-top: 70px; /* Adjust based on the navbar height */
+        margin-top: -70px;
+    }
     </style>
 </head>
 <body class="bg-light dark:bg-dark text-dark dark:text-white min-h-screen flex flex-col font-['Inter'] transition-colors duration-300"></body>
     <div class="absolute top-8 right-8 z-10">
+        <br>
         <button id="themeToggle" class="p-2 rounded-lg bg-dark dark:bg-light text-light dark:text-dark w-10 h-10 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
             </svg>
         </button>
     </div>
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">My main tech stack</a></li>
+                <li><a href="#timeline">Work Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="flex-grow flex flex-col">
         <!-- Hero Section -->
@@ -674,6 +729,7 @@
                       <img src="https://flagicons.lipis.dev/flags/4x3/il.svg" alt="Hebrew" class="language-icon">
                       <span class="language-text">Hebrew</span>
                   </div>
+                  <br>
               </div>
           </div>
       </section>
@@ -779,6 +835,17 @@
                 },
             },
         }
+    </script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </head>
 <body class="bg-light dark:bg-dark text-dark dark:text-white min-h-screen flex flex-col font-['Inter'] transition-colors duration-300">

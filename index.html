@@ -68,12 +68,14 @@
             filter: invert(0);
             transform: scale(1.5);
         }
-        .dark .tech-icon:hover {
-            /*filter: invert(1);*/
-            transform: scale(1.5);
+        .dark .tech-icon-invert {
+            filter: invert(1); /* Invert colors for this specific class in dark mode */
+        }
+        .dark .tech-icon-invert:hover {
+            filter: invert(1); /* Invert colors for this specific class in dark mode */
         }
         .dark .tech-icon:hover {
-            /*filter: invert(1);*/
+            transform: scale(1.5);
         }
         .squircle {
             width: 256px;
@@ -561,7 +563,7 @@
                     Lucas Scheinkerman
                 </h1>
                 <p class="text-xl md:text-2xl font-semibold mb-8">
-                    <span class="text-gray-600 dark:text-[#C9C9C9]">Software Engineer</span>
+                    <span class="text-gray-600 dark:text-[#C9C9C9]">Computer Vision Engineer</span>
                 </p>
 
                 <!-- Buttons -->
@@ -612,13 +614,13 @@
                     </div>
                     <div class="max-w-2xl text-center md:text-left">
                         <p class="about-text font-about-me">
-                            Hi there! I'm a Software Engineer with 4+ years of experience.
+                            Hi there! I'm a Computer Vision Engineer with 4+ years of experience.
                         </p>
                         <br>
                         <p class="about-text font-about-me">
-                          Currently working as Robotics Simulation Engineer at 
-                          <a href="https://www.linkedin.com/company/unreal-empowerment/" target="_blank">Unreal Empowerment</a>,
-                          helping to simulate the (yet) Unreal!
+                          Currently working as a Computer Vision Engineer at 
+                          <a href="https://optriment.com/" target="_blank">Optriment</a>,
+                          developing AI pipelines to generate cool metrics from live video streams!
                         </p>
                         <br>
                         <p class="about-text font-about-me">
@@ -637,7 +639,7 @@
         <section id="skills" class="section py-20">
             <div class="skills-container mx-auto px-8 sm:px-16">
                 <h2 class="text-3xl font-bold mb-12 text-center font-about-me">My main tech stack</h2>
-                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-8 justify-items-center">
+                <div class="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-3 gap-8 justify-items-center">
                     <div class="skill-container">
                       <img src="assets/cpp.svg" class="tech-icon">
                       <span class="skill-text">C++</span>
@@ -652,13 +654,13 @@
                     </div>
                 </div>
                 <br><br><br>
-                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 gap-8 justify-items-center">
+                <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-5 gap-8 justify-items-center">
                   <div class="skill-container">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.14.0/icons/unrealengine.svg" class="tech-icon">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.14.0/icons/unrealengine.svg" class="tech-icon tech-icon-invert">
                     <span class="skill-text">Unreal Engine</span>
                   </div>
                   <div class="skill-container">
-                    <img src="assets/ros.svg" class="tech-icon">
+                    <img src="assets/ros.svg" class="tech-icon-invert">
                     <span class="skill-text">ROS</span>
                   </div>
                   <div class="skill-container">
@@ -669,18 +671,37 @@
                     <img src="assets/docker.svg" class="tech-icon">
                     <span class="skill-text">Docker</span>
                   </div>
+                  <div class="skill-container">
+                    <img src="assets/pytorch.svg" class="tech-icon tech-icon-invert" style="width: 100px; height: auto;">
+                    <span class="skill-text">PyTorch</span>
+                  </div>
                 </div>
                 <br><br><br><br><br><br>
-                <h2 class="text-3xl font-bold mb-12 text-center font-about-me">Frameworks, libraries & tools</h2>
+                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 gap-8 justify-items-center">
+                    <div class="skill-container">
+                      <img src="assets/gcp.svg" class="tech-icon tech-icon-invert">
+                      <span class="skill-text">Google Cloud</span>
+                    </div>
+                    <div class="skill-container">
+                        <img src="assets/git.svg" class="tech-icon">
+                        <span class="skill-text">Git</span>
+                    </div>
+                    <div class="skill-container">
+                        <img src="assets/cmake.svg" class="tech-icon">
+                        <span class="skill-text">CMake</span>
+                    </div>
+                    <div class="skill-container">
+                        <img src="assets/bazel.svg" class="tech-icon">
+                        <span class="skill-text">Bazel</span>
+                    </div>
+                </div>
+                <!--h2 class="text-3xl font-bold mb-12 text-center font-about-me">Frameworks, libraries & tools</h2>
                 <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 gap-8 justify-items-center">
                   <div class="skill-container">
                     <img src="assets/numpy.svg" class="tech-icon">
                     <span class="skill-text">Numpy</span>
                   </div>
-                  <div class="skill-container">
-                    <img src="assets/git.svg" class="tech-icon">
-                    <span class="skill-text">Git</span>
-                  </div>
+                  
                   <div class="skill-container">
                     <img src="assets/pandas.svg" class="tech-icon">
                     <span class="skill-text">Pandas</span>
@@ -693,10 +714,7 @@
                 
                 <br><br><br>
                 <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 gap-8 justify-items-center">
-                  <div class="skill-container">
-                    <img src="assets/cmake.svg" class="tech-icon">
-                    <span class="skill-text">CMake</span>
-                  </div>
+                  
                   <div class="skill-container">
                     <img src="assets/ubuntu.svg" class="tech-icon">
                     <span class="skill-text">Ubuntu</span>
@@ -709,7 +727,7 @@
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/pytest.svg" class="tech-icon">
                     <span class="skill-text">PyTest</span>
                   </div>
-                </div>
+                </div-->
             </div>
         </section>
 
@@ -764,14 +782,30 @@
               <h2 class="text-3xl font-bold mb-12 text-center font-about-me">Work experience</h2>
               
               <div class="timeline">
+                    <div class="timeline-event">
+                        <a href="https://optriment.com/" target="_blank" class="timeline-logo-link">
+                        <img src="assets/optriment.png" alt="Optriment" class="timeline-logo">
+                        </a>
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-bold mb-2">Computer Vision Engineer</h3>
+                            <span class="timeline-company"> Optriment</span><br>
+                            <span class="timeline-date">January 2025 - Present</span>
+                            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2">
+                                <li>Responsible for the <b>C++</b> build infrastructure</li>
+                                <li>Implementaion of live <b>Computer Vision pipelines</b> using <b>PyTorch</b>, running on <b>Jetson Nano</b> devices.</li>
+                                <li>Deployment of pipelines in several machines using <b>Docker-compose</b> and <b>GCP</b>.</li>
+                            </ul>
+                        </div>
+                    </div>
+
                   <div class="timeline-event">
-                      <a href="https://www.linkedin.com/company/unreal-empowerment" target="_blank" class="timeline-logo-link">
-                        <img src="assets/unreal_empowerment.png" alt="Unreal Empowerment" class="timeline-logo">
+                      <a href="https://www.linkedin.com/company/iamai-sim" target="_blank" class="timeline-logo-link">
+                        <img src="assets/iamai_sim_logo.jpeg" alt="IAMAI Simulations" class="timeline-logo">
                       </a>
                       <div class="timeline-content">
                           <h3 class="text-xl font-bold mb-2">Robotics simulation Engineer </h3>
                           <span class="timeline-company"> Unreal Empowerment</span><br>
-                          <span class="timeline-date">June 2023 - Present</span>
+                          <span class="timeline-date">June 2023 - January 2025</span>
                           <p class="mt-2"> I develop simulation tools to generate artificial datasets for training
                             AI-based aircraft navigation algorithms, ensuring compliance with specific requirements. <br><br>
                             I use <b>C++</b> for core development and <b>Unreal Engine</b> for high-fidelity
@@ -905,6 +939,7 @@
 
         // Toggle theme when button is clicked
         themeToggle.addEventListener('click', () => {
+            //const isDark = false;
             const isDark = !html.classList.contains('dark');
             setTheme(isDark);
         });
@@ -938,6 +973,24 @@
 
         // Project data
         const projects = [
+            {
+                title: "Face blurring app",
+                description: "App to automatially blur faces in images or video sequences.",
+                url: "https://github.com/LucasJSch/face_blurring/",
+                image: "assets/face_blur_app.png"
+            },
+            {
+                title: "Live people detection using NVidia Deepstream and C++",
+                description: "Live processing pipeline using peoplenet to detect people in specific regions.",
+                url: "https://github.com/LucasJSch/deepstream_challenge",
+                image: "assets/op_challenge.jpg"
+            },
+            {
+                title: "Pose estimator pipeline",
+                description: "Object Detection + Pose estimator pipeline for live camera streams using YOLO models.",
+                url: "https://github.com/LucasJSch/pose_estimator_pipeline",
+                image: "assets/pose_estimator_pipeline.png"
+            },
             {
                 title: "Spaceship navigation",
                 description: "Spaceship navigation animation using WebGL, JavaScript and GLSL.",

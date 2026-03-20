@@ -27,6 +27,11 @@
             scroll-behavior: smooth;
         }
 
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
         ::selection {
             background: #007AFF;
             color: white;
@@ -547,90 +552,226 @@
     .timeline h3 {
         color: #333;
     }
+
+    @media (max-width: 640px) {
+        .timeline-container {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .timeline::before {
+            display: none;
+        }
+
+        .timeline-event {
+            flex-direction: column;
+            align-items: stretch;
+            padding-left: 0;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-logo-link {
+            position: static;
+            align-self: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-logo {
+            position: static;
+            left: auto;
+            top: auto;
+            width: 72px;
+            height: 72px;
+            margin: 0 auto;
+            display: block;
+        }
+    }
     </style>
     <style>
-      /* Adjust grid for small screens (like mobile devices) */
-    @media (max-width: 768px) {
-        .grid {
-            grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
-        }
-    }
-
-    /* Adjust grid for very small screens (e.g., phones) */
-    @media (max-width: 480px) {
-        .grid {
-            grid-template-columns: repeat(1, 1fr); /* 1 column on very small screens */
-        }
-    }
-
-        /* General styling for the navigation bar */
     .navbar {
-        background-color: #333;
-        position: fixed; /* Make it stick to the top */
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
         width: 100%;
-        z-index: 1000; /* Ensure the navbar is above other content */
-        padding: 10px 0;
+        z-index: 1000;
+        background-color: rgba(38, 38, 38, 0.97);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(8px);
+        padding-top: max(10px, env(safe-area-inset-top));
+        padding-bottom: 10px;
     }
 
-    /* Style the menu items */
-    .nav-menu {
-        list-style: none;
+    .dark .navbar {
+        background-color: rgba(10, 10, 10, 0.97);
+        border-bottom-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar-inner {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding-left: max(12px, env(safe-area-inset-left));
+        padding-right: max(12px, env(safe-area-inset-right));
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+
+    .nav-menu-toggle {
+        order: 1;
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .nav-menu-toggle:hover {
+        background: rgba(255, 255, 255, 0.18);
+    }
+
+    @media (min-width: 768px) {
+        .nav-menu-toggle {
+            display: none;
+        }
+    }
+
+    .nav-primary {
+        list-style: none;
         margin: 0;
         padding: 0;
+        display: none;
+        flex-direction: column;
+        order: 3;
+        width: 100%;
+        flex-basis: 100%;
+        gap: 0.25rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding-top: 0.75rem;
+        margin-top: 0.5rem;
     }
 
-    .nav-menu li {
-        margin: 0 15px;
+    .nav-primary.is-open {
+        display: flex;
     }
 
-    .nav-menu a {
-        color: white;
+    @media (min-width: 768px) {
+        .nav-primary {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: auto;
+            flex: 1 1 auto;
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+            gap: 0;
+        }
+
+        .nav-primary.is-open {
+            display: flex;
+        }
+    }
+
+    .nav-primary li {
+        margin: 0;
+    }
+
+    .nav-primary a {
+        display: block;
+        color: #fff;
         text-decoration: none;
-        font-weight: bold;
-        padding: 10px 20px;
-        transition: background-color 0.3s ease;
+        font-weight: 700;
+        padding: 12px 16px;
+        border-radius: 6px;
+        transition: background-color 0.2s ease;
     }
 
-    .nav-menu a:hover {
-        background-color: #555;
-        border-radius: 5px;
+    .nav-primary a:hover {
+        background-color: rgba(255, 255, 255, 0.12);
     }
 
-    /* Add padding to the top of sections to avoid content being hidden behind the fixed navbar */
+    @media (min-width: 768px) {
+        .nav-primary a {
+            padding: 10px 14px;
+        }
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        order: 2;
+        margin-left: auto;
+    }
+
+    @media (min-width: 768px) {
+        .nav-menu-toggle {
+            order: 0;
+        }
+
+        .nav-primary {
+            order: 1;
+            flex: 1 1 auto;
+            flex-basis: auto;
+            width: auto;
+            justify-content: center;
+        }
+
+        .nav-actions {
+            order: 2;
+            margin-left: 0;
+        }
+
+        .navbar-inner {
+            flex-wrap: nowrap;
+        }
+    }
+
     section {
-        padding-top: 70px; /* Adjust based on the navbar height */
+        padding-top: 70px;
         margin-top: -70px;
     }
     </style>
 </head>
-<body class="bg-light dark:bg-dark text-dark dark:text-white min-h-screen flex flex-col font-['Inter'] transition-colors duration-300"></body>
-    <div class="absolute top-8 right-8 z-10">
-        <br>
-        <button id="themeToggle" class="p-2 rounded-lg bg-dark dark:bg-light text-light dark:text-dark w-10 h-10 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-            </svg>
-        </button>
-    </div>
-
+<body class="bg-light dark:bg-dark text-dark dark:text-white min-h-screen flex flex-col font-['Inter'] transition-colors duration-300">
     <header>
-        <nav class="navbar">
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">My main tech stack</a></li>
-                <li><a href="#timeline">Work Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
+        <nav class="navbar" aria-label="Primary">
+            <div class="navbar-inner">
+                <button type="button" id="navMenuToggle" class="nav-menu-toggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Open menu">
+                    <i data-lucide="menu" class="w-6 h-6 nav-icon-open" aria-hidden="true"></i>
+                    <i data-lucide="x" class="w-6 h-6 nav-icon-close hidden" aria-hidden="true"></i>
+                </button>
+                <ul id="primaryNav" class="nav-primary">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">My main tech stack</a></li>
+                    <li><a href="#timeline">Work Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button type="button" id="themeToggle" class="p-2 rounded-lg bg-light dark:bg-dark text-dark dark:text-light w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-gray-600" aria-label="Toggle dark mode">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main class="flex-grow flex flex-col">
         <!-- Hero Section -->
-        <section class="flex items-center justify-center min-h-screen">
+        <section id="home" class="relative flex items-center justify-center min-h-screen">
             <div class="text-center max-w-4xl mx-auto px-4">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-2 tracking-tight leading-none relative">
                 <span class="bg-gradient-to-r from-black via-gray-700 to-black dark:from-white dark:via-gray-300 dark:to-white bg-clip-text text-transparent">
@@ -642,33 +783,33 @@
                 </p>
 
                 <!-- Buttons -->
-                <div class="flex justify-center space-x-4 mb-12">
-                  <a href="https://www.linkedin.com/in/lucas-scheinkerman/" class="button button-filled flex items-center space-x-2">
+                <div class="flex flex-wrap justify-center gap-3 mb-12 px-2">
+                  <a href="https://www.linkedin.com/in/lucas-scheinkerman/" class="button button-filled inline-flex items-center justify-center gap-2 w-full sm:w-auto">
                     <span>LinkedIn</span>
                     <i data-lucide="linkedin" class="w-5 h-5"></i>
                 </a>
-                  <a href="https://github.com/lucasjsch/" class="button button-filled flex items-center space-x-2">
+                  <a href="https://github.com/lucasjsch/" class="button button-filled inline-flex items-center justify-center gap-2 w-full sm:w-auto">
                     <span>Github</span>
                     <i data-lucide="github" class="w-5 h-5"></i>
                 </a>
-                <a href="mailto:lucas.scheinkerman@gmail.com" class="button button-filled flex items-center space-x-2">
+                <a href="mailto:lucas.scheinkerman@gmail.com" class="button button-filled inline-flex items-center justify-center gap-2 w-full sm:w-auto">
                     <span>Contact Me</span>
                     <i data-lucide="mail" class="w-5 h-5"></i>
                 </a>
-                <a href="assets/CV.pdf" download class="button button-filled flex items-center space-x-2">
+                <a href="assets/CV.pdf" download class="button button-filled inline-flex items-center justify-center gap-2 w-full sm:w-auto">
                   <span>Get my CV</span>
                   <i data-lucide="download" class="w-5 h-5"></i>
                 </a>
                 </div>
 
                 <br><br>
-                <div class="flex justify-center space-x-4 mb-12 ml-[-60px]">
-                  <i data-lucide="map-pin" class="w-10 h-7"></i>
+                <div class="flex items-center justify-center gap-2 mb-6 px-2 text-center">
+                  <i data-lucide="map-pin" class="w-10 h-7 shrink-0"></i>
                   <span>Buenos Aires, Argentina</span>
                 </div>
 
-                <div class="flex justify-center space-x-4 mb-12 ml-[-60px]">
-                  <i data-lucide="graduation-cap" class="w-10 h-7"></i>
+                <div class="flex items-center justify-center gap-2 mb-12 px-2 text-center">
+                  <i data-lucide="graduation-cap" class="w-10 h-7 shrink-0"></i>
                   <span>University of Buenos Aires</span>
                 </div>
 
@@ -950,39 +1091,61 @@
 
     </main>
     <footer class="w-full mt-8 py-4 border-t border-gray-300 dark:border-gray-700">
-        <p class="text-center font-space-mono text-sm uppercase cursor-pointer footer-text">
-            Designed by Lucas Scheinkerman, inspired by <a href="https://akashblsbrmnm.github.io/">https://akashblsbrmnm.github.io/</a>.
+        <p class="text-center font-space-mono text-sm uppercase cursor-pointer footer-text px-3">
+            Designed by Lucas Scheinkerman, inspired by <a href="https://akashblsbrmnm.github.io/" class="break-all">https://akashblsbrmnm.github.io/</a>.
         </p>
     </footer>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        dark: "#0a0a0a",
-                        light: "#fcfbf7",
-                    },
-                },
-            },
+        lucide.createIcons();
+
+        const navMenuToggle = document.getElementById('navMenuToggle');
+        const primaryNav = document.getElementById('primaryNav');
+        const navIconOpen = navMenuToggle && navMenuToggle.querySelector('.nav-icon-open');
+        const navIconClose = navMenuToggle && navMenuToggle.querySelector('.nav-icon-close');
+
+        function setNavOpen(open) {
+            if (!navMenuToggle || !primaryNav) return;
+            primaryNav.classList.toggle('is-open', open);
+            navMenuToggle.setAttribute('aria-expanded', String(open));
+            navMenuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            if (navIconOpen && navIconClose) {
+                navIconOpen.classList.toggle('hidden', open);
+                navIconClose.classList.toggle('hidden', !open);
+            }
         }
-    </script>
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+
+        if (navMenuToggle && primaryNav) {
+            navMenuToggle.addEventListener('click', function () {
+                setNavOpen(!primaryNav.classList.contains('is-open'));
+            });
+            primaryNav.querySelectorAll('a[href^="#"]').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    setNavOpen(false);
                 });
             });
+        }
+
+        var navDesktopMql = window.matchMedia('(min-width: 768px)');
+        function onNavDesktopChange(e) {
+            if (e.matches) setNavOpen(false);
+        }
+        if (navDesktopMql.addEventListener) {
+            navDesktopMql.addEventListener('change', onNavDesktopChange);
+        } else if (navDesktopMql.addListener) {
+            navDesktopMql.addListener(onNavDesktopChange);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+            anchor.addEventListener('click', function (e) {
+                var id = anchor.getAttribute('href');
+                if (!id || id === '#') return;
+                var target = document.querySelector(id);
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
         });
-    </script>
-</head>
-<body class="bg-light dark:bg-dark text-dark dark:text-white min-h-screen flex flex-col font-['Inter'] transition-colors duration-300">
-    <script>
-        lucide.createIcons();
-        
+
         // Scroll reveal effect
         function revealSections() {
             const sections = document.querySelectorAll('.section');

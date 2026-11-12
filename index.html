@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Scheinkerman</title>
+    <title>Lucas Scheinkerman | Robotics, Computer Vision &amp; AI Engineer</title>
+    <meta name="description" content="Lucas Scheinkerman is a Robotics, Computer Vision and AI Engineer building edge AI, LLM, and robotics systems with Python and C++." />
     <link rel="icon" href="assets/dp.png" type="image/jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -83,6 +84,20 @@
         .tech-icon:hover {
             filter: invert(0);
             transform: scale(1.5);
+        }
+
+        .pytorch-icon {
+            width: 96px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .tech-icon.brand-icon {
+            filter: grayscale(100%) opacity(0.7);
+        }
+
+        .skill-container:hover .brand-icon {
+            filter: none;
         }
         .dark .tech-icon-invert {
             filter: invert(1); /* Invert colors for this specific class in dark mode */
@@ -271,6 +286,47 @@
 
         .project-thumbnail img {
             transition: transform 0.4s ease;
+        }
+
+        .case-study-card {
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        .dark .case-study-card {
+            border-color: rgba(255, 255, 255, 0.14);
+            background: rgba(31, 31, 31, 0.85);
+        }
+
+        .case-study-card img {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+        }
+
+        .case-study-tag {
+            display: inline-block;
+            margin: 0.25rem 0.25rem 0 0;
+            padding: 0.2rem 0.55rem;
+            border-radius: 999px;
+            background: rgba(0, 122, 255, 0.1);
+            color: #005bbd;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .dark .case-study-tag {
+            background: rgba(96, 165, 250, 0.16);
+            color: #bfdbfe;
         }
 
         .project-thumbnail:hover img {
@@ -762,6 +818,7 @@
                     <li><a href="#about">About Me</a></li>
                     <li><a href="#skills">My main tech stack</a></li>
                     <li><a href="#timeline">Work Experience</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
                     <li><a href="#projects">Projects</a></li>
                 </ul>
                 <div class="nav-actions">
@@ -785,7 +842,13 @@
                 </span>
                 </h1>
                 <p class="text-xl md:text-2xl font-semibold mb-8">
-                    <span class="text-gray-600 dark:text-[#C9C9C9]">AI & Robotics Engineer</span>
+                    <span class="text-gray-600 dark:text-[#C9C9C9]">Robotics, Computer Vision &amp; AI Engineer</span>
+                </p>
+                <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-4">
+                    Robotics &middot; Edge AI &middot; LLMs &middot; Python &amp; C++
+                </p>
+                <p class="max-w-2xl mx-auto text-gray-700 dark:text-gray-300 mb-8">
+                    I build robotics, computer vision and LLM-based systems, from model integration and fine-tuning to edge deployment, monitoring, and production applications.
                 </p>
 
                 <!-- Buttons -->
@@ -797,6 +860,10 @@
                   <a href="https://github.com/lucasjsch/" class="button button-filled inline-flex items-center justify-center gap-2 w-full sm:w-auto">
                     <span>Github</span>
                     <img src="assets/github-logo.jpg" alt="" aria-hidden="true" class="w-5 h-5 rounded-full object-cover">
+                </a>
+                <a href="https://www.upwork.com/freelancers/~0194df03ccf08505f1" target="_blank" rel="noopener noreferrer" class="button button-outlined inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+                    <span>Upwork</span>
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
                 </a>
                 <a href="mailto:lucas.scheinkerman@gmail.com" class="button button-filled inline-flex items-center justify-center gap-2 w-full sm:w-auto">
                     <span>Contact Me</span>
@@ -836,21 +903,21 @@
                     </div>
                     <div class="max-w-2xl text-center md:text-left">
                         <p class="about-text font-about-me">
-                            Hi there! I'm an AI & Robotics Engineer with 5+ years of experience.
+                            I’m a Robotics, Computer Vision &amp; AI Engineer who builds systems that move from prototypes into real-world environments: NVIDIA Jetson devices, industrial equipment, and robotics simulations.
                         </p>
                         <br>
                         <p class="about-text font-about-me">
-                          Currently working as a Founding AI & Robotics Engineer at
-                          <a href="https://iamaisim.com/" target="_blank">IAMAI Simulations</a>,
+                          I work end to end across model integration and task-specific fine-tuning, application development, deployment, and monitoring. Currently, I’m a Founding AI &amp; Robotics Engineer at
+                          <a href="https://iamaisim.com/" target="_blank" rel="noopener noreferrer">IAMAI Simulations</a>,
                           building simulation infrastructure to train, test, and validate drone autonomy systems.
                         </p>
                         <br>
                         <p class="about-text font-about-me">
-                          Always looking for new awesome technical challenges, eager to learn new things and do meaningful work that impacts positively in our world. I love to learn new stuff, understand how complex systems work, and transform theoretical ideas into real things. Translated into my work, I love all aspects of complex systems design and implementation.
+                          My work includes embedded AI assistants, edge computer-vision pipelines, and simulation infrastructure for autonomous systems. I enjoy turning complex research and platform constraints into dependable engineering systems.
                         </p>
                         <br>
                         <p class="about-text font-about-me">
-                          From coding low-level C routines, to solving high-level problems using the most suitable data structures and algorithms, I find exciting each and everyone of the layers.
+                          Based in Buenos Aires, I work in English, Spanish, and Hebrew.
                         </p>
                     </div>
                 </div>
@@ -879,12 +946,33 @@
                 </div>
             </div>
     
+            <!-- Computer Vision -->
+            <h3 class="text-xl font-semibold mb-6 text-center">Computer Vision</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 justify-items-center mb-12">
+                <div class="skill-container">
+                    <img src="assets/pytorch.svg" class="tech-icon tech-icon-invert pytorch-icon">
+                    <span class="skill-text">PyTorch</span>
+                </div>
+                <div class="skill-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg" class="tech-icon brand-icon" alt="OpenCV logo">
+                    <span class="skill-text">OpenCV</span>
+                </div>
+                <div class="skill-container">
+                    <img src="https://cdn.simpleicons.org/nvidia/76B900" class="tech-icon brand-icon" alt="CUDA logo">
+                    <span class="skill-text">CUDA</span>
+                </div>
+                <div class="skill-container">
+                    <img src="https://cdn.simpleicons.org/ultralytics/111F68" class="tech-icon brand-icon" alt="Ultralytics YOLO logo">
+                    <span class="skill-text">YOLO · DETR · Vision Transformers</span>
+                </div>
+            </div>
+
             <!-- AI Systems -->
             <h3 class="text-xl font-semibold mb-6 text-center">AI Systems</h3>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 justify-items-center mb-12">
                 <div class="skill-container">
                     <img src="assets/llm.svg" class="tech-icon tech-icon-invert">
-                    <span class="skill-text">LLMs</span>
+                    <span class="skill-text">LLMs &amp; Fine-tuning</span>
                 </div>
                 <div class="skill-container">
                     <img src="assets/rag.webp" class="tech-icon tech-icon-invert">
@@ -892,57 +980,32 @@
                 </div>
                 <div class="skill-container">
                     <img src="assets/asr_systems.png" class="tech-icon tech-icon-invert">
-                    <span class="skill-text">ASR</span>
+                    <span class="skill-text">ASR &amp; TTS</span>
                 </div>
             </div>
     
-            <!-- Frameworks & Tools -->
-            <h3 class="text-xl font-semibold mb-6 text-center">Frameworks & Tools</h3>
-            <div class="flex flex-col gap-8 mb-12">
-                <div class="grid grid-cols-3 sm:grid-cols-5 gap-8 justify-items-center">
-                    <div class="skill-container">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.14.0/icons/unrealengine.svg" class="tech-icon tech-icon-invert">
-                        <span class="skill-text">Unreal Engine</span>
-                    </div>
-                    <div class="skill-container">
-                        <img src="assets/ros.svg" class="tech-icon-invert">
-                        <span class="skill-text">ROS</span>
-                    </div>
-                    <div class="skill-container">
-                        <img src="assets/android.svg" class="tech-icon">
-                        <span class="skill-text">Android</span>
-                    </div>
-                    <div class="skill-container">
-                        <img src="assets/docker.svg" class="tech-icon">
-                        <span class="skill-text">Docker</span>
-                    </div>
-                    <div class="skill-container">
-                        <img src="assets/pytorch.svg" class="tech-icon tech-icon-invert" style="width: 100px; height: auto;">
-                        <span class="skill-text">PyTorch</span>
-                    </div>
-                </div>
-                <div class="flex flex-wrap justify-center gap-x-24 gap-y-8 sm:gap-x-32">
-                    <div class="skill-container">
-                        <img src="assets/cursor.svg" class="tech-icon tech-icon-invert">
-                        <span class="skill-text">Cursor</span>
-                    </div>
-                    <div class="skill-container">
-                        <img src="assets/githubcopilot.svg" class="tech-icon tech-icon-invert">
-                        <span class="skill-text">GitHub Copilot</span>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Infrastructure -->
-            <h3 class="text-xl font-semibold mb-6 text-center">Infrastructure</h3>
+            <!-- Robotics & Edge AI -->
+            <h3 class="text-xl font-semibold mb-6 text-center">Robotics &amp; Edge AI</h3>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 justify-items-center">
                 <div class="skill-container">
-                    <img src="assets/gcp.svg" class="tech-icon tech-icon-invert">
-                    <span class="skill-text">Google Cloud</span>
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@13.14.0/icons/unrealengine.svg" class="tech-icon tech-icon-invert">
+                    <span class="skill-text">Unreal Engine</span>
+                </div>
+                <div class="skill-container">
+                    <img src="assets/ros.svg" class="tech-icon-invert">
+                    <span class="skill-text">ROS</span>
+                </div>
+                <div class="skill-container">
+                    <img src="assets/android.svg" class="tech-icon">
+                    <span class="skill-text">Android</span>
                 </div>
                 <div class="skill-container">
                     <img src="assets/docker.svg" class="tech-icon">
                     <span class="skill-text">Docker</span>
+                </div>
+                <div class="skill-container">
+                    <img src="assets/gcp.svg" class="tech-icon tech-icon-invert">
+                    <span class="skill-text">Google Cloud</span>
                 </div>
                 <div class="skill-container">
                     <img src="assets/balena_os.svg" class="tech-icon">
@@ -959,6 +1022,18 @@
                 <div class="skill-container">
                     <img src="assets/bazel.svg" class="tech-icon">
                     <span class="skill-text">Bazel</span>
+                </div>
+                <div class="skill-container">
+                    <img src="https://cdn.simpleicons.org/nvidia/76B900" class="tech-icon brand-icon" alt="NVIDIA logo">
+                    <span class="skill-text">NVIDIA Jetson</span>
+                </div>
+                <div class="skill-container">
+                    <img src="https://cdn.simpleicons.org/grafana/F46800" class="tech-icon brand-icon" alt="Grafana logo">
+                    <span class="skill-text">Grafana</span>
+                </div>
+                <div class="skill-container">
+                    <img src="https://cdn.simpleicons.org/prometheus/E6522C" class="tech-icon brand-icon" alt="Prometheus logo">
+                    <span class="skill-text">Prometheus</span>
                 </div>
             </div>
         </div>
@@ -1016,7 +1091,7 @@
 
               <div class="timeline">
               <div class="timeline-event">
-                <a href="https://iamaisim.com/" target="_blank" class="timeline-logo-link">
+                <a href="https://iamaisim.com/" target="_blank" rel="noopener noreferrer" class="timeline-logo-link">
                     <img src="assets/iamai_sim_logo.jpeg" alt="IAMAI Simulations" class="timeline-logo">
                 </a>
                 <div class="timeline-content">
@@ -1037,32 +1112,50 @@
                         <li>Prepare and deliver technical demos for potential clients.</li>
                         <li>Collaborate on technical planning, architecture, and product decisions.</li>
                     </ul>
+                    <div class="mt-5 flex flex-wrap gap-3" aria-label="Project AirSim references">
+                        <a href="https://github.com/iamaisim/ProjectAirSim" target="_blank" rel="noopener noreferrer" class="button button-outlined inline-flex items-center justify-center gap-2">
+                            <span>Project AirSim source</span>
+                            <i data-lucide="github" class="w-4 h-4" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://iamaisim.github.io/ProjectAirSim/" target="_blank" rel="noopener noreferrer" class="button button-outlined inline-flex items-center justify-center gap-2">
+                            <span>Simulation documentation</span>
+                            <i data-lucide="book-open" class="w-4 h-4" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
               </div>
 
               <div class="timeline-event">
-                <a href="#" target="_blank" class="timeline-logo-link">
+                <div class="timeline-logo-link" aria-hidden="true">
                     <img src="assets/marvik.png" alt="Marvik" class="timeline-logo">
-                </a>
+                </div>
                 <div class="timeline-content">
                     <h3 class="text-xl font-bold mb-2">AI & Robotics Engineer</h3>
                     <span class="timeline-company"> Marvik</span><br>
                     <span class="timeline-date">January 2026 - May 2026</span>
                     <p class="mt-2">
-                        Design and implementation of an embedded virtual assistant system, aimed at industrial heavy machinery environments (such as loaders, excavators, or lifts).
+                        Designed and implemented an embedded virtual assistant for industrial heavy machinery, including loaders, excavators, and aerial lifts.
                     </p>
                     <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2">
-                        <li><b>ASR (Automatic Speech Recognition)</b></li>
-                        <li><b>RAG (Retrieval-Augmented Generation)</b></li>
-                        <li><b>TTS (Text-to-Speech)</b></li>
-                        <li><b>Model fine-tuning</b></li>
+                        <li>Combined <b>ASR</b>, <b>RAG</b>, and <b>TTS</b> into a speech-enabled assistant experience.</li>
+                        <li>Fine-tuned language models for domain-specific applications.</li>
                     </ul>
+                    <div class="mt-5 flex flex-wrap gap-3" aria-label="Marvik references">
+                        <a href="https://www.youtube.com/watch?v=-9OBJ2nLkMY" target="_blank" rel="noopener noreferrer" class="button button-outlined inline-flex items-center justify-center gap-2">
+                            <span>Demo video</span>
+                            <i data-lucide="video" class="w-4 h-4" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/posts/ces2026-techevents-ugcPost-7416923412817858561-kPh9/" target="_blank" rel="noopener noreferrer" class="button button-outlined inline-flex items-center justify-center gap-2">
+                            <span>CES 2026 post</span>
+                            <i data-lucide="linkedin" class="w-4 h-4" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
               </div>
               
               <div class="timeline">
                     <div class="timeline-event">
-                        <a href="https://optriment.com/" target="_blank" class="timeline-logo-link">
+                        <a href="https://optriment.com/" target="_blank" rel="noopener noreferrer" class="timeline-logo-link">
                         <img src="assets/optriment.png" alt="Optriment" class="timeline-logo">
                         </a>
                         <div class="timeline-content">
@@ -1070,11 +1163,17 @@
                             <span class="timeline-company"> Optriment</span><br>
                             <span class="timeline-date">January 2025 - January 2026</span>
                             <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2">
-                                <li>Responsible for the <b>C++</b> build infrastructure</li>
-                                <li>Implementaion of live <b>Computer Vision pipelines</b> using <b>PyTorch</b>, running on <b>Jetson Nano</b> devices.</li>
-                                <li>Deployment of pipelines in several machines using <b>Docker-compose</b> and <b>GCP</b>.</li>
-                                <li>Fine-tuning and training state-of-the-art <b>Vision Transformer</b> models.</li>
+                                <li>Developed computer-vision pipelines with <b>PyTorch</b>, <b>OpenCV</b>, <b>CUDA</b>, <b>Python</b>, and <b>C++</b>.</li>
+                                <li>Deployed AI services to <b>Jetson Nano</b> edge devices and managed the C++ build infrastructure.</li>
+                                <li>Built monitoring dashboards with <b>Grafana</b> and <b>Prometheus</b>; deployed services with Docker Compose and GCP.</li>
+                                <li>Fine-tuned vision-transformer models for task-specific applications.</li>
                             </ul>
+                            <div class="mt-5 flex flex-wrap gap-3" aria-label="Optriment references">
+                                <a href="https://optriment.com/computer-vision-in-a-box/" target="_blank" rel="noopener noreferrer" class="button button-outlined inline-flex items-center justify-center gap-2">
+                                    <span>Computer Vision in a Box</span>
+                                    <i data-lucide="external-link" class="w-4 h-4" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -1097,7 +1196,7 @@
                   </div>
       
                   <div class="timeline-event">
-                      <a href="https://ekumenlabs.com/" target="_blank" class="timeline-logo-link">
+                      <a href="https://ekumenlabs.com/" target="_blank" rel="noopener noreferrer" class="timeline-logo-link">
                         <img src="assets/ekumen.png" alt="Ekumen" class="timeline-logo">
                       </a>
                       <div class="timeline-content">
@@ -1121,6 +1220,39 @@
           </div>
       </section>
       
+        <section id="case-studies" class="section py-20">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <h2 class="text-3xl font-bold mb-4 text-center font-about-me">Selected Case Studies</h2>
+                <p class="max-w-2xl mx-auto text-center text-gray-600 dark:text-gray-400 mb-12">Selected technical work across industrial AI, edge computer vision, and applied model fine-tuning.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <article class="case-study-card">
+                        <img src="assets/asr_systems.png" alt="Audio waveform representing speech systems" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Embedded Industrial AI Assistant</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Designed an assistant for heavy equipment environments, combining speech recognition, retrieval-augmented generation, text-to-speech, and domain-specific language-model fine-tuning.</p>
+                            <div class="mt-4"><span class="case-study-tag">ASR</span><span class="case-study-tag">RAG</span><span class="case-study-tag">TTS</span><span class="case-study-tag">LLM Fine-tuning</span></div>
+                        </div>
+                    </article>
+                    <article class="case-study-card">
+                        <img src="assets/nvidia_deepstream.png" alt="Edge computer vision pipeline visualisation" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Edge Computer Vision Systems</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Developed accelerated computer-vision pipelines for NVIDIA Jetson devices and supported their operation with deployment tooling and monitoring dashboards.</p>
+                            <div class="mt-4"><span class="case-study-tag">PyTorch</span><span class="case-study-tag">OpenCV</span><span class="case-study-tag">CUDA</span><span class="case-study-tag">Jetson</span></div>
+                        </div>
+                    </article>
+                    <article class="case-study-card">
+                        <img src="assets/pose_estimator_pipeline.png" alt="Pose-estimation computer vision pipeline" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Golf Swing Analysis</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Led a freelance mobile golf-swing analysis project, working with YOLO, DETR, and vision transformers, including model selection and fine-tuning.</p>
+                            <div class="mt-4"><span class="case-study-tag">YOLO</span><span class="case-study-tag">DETR</span><span class="case-study-tag">Vision Transformers</span><span class="case-study-tag">Fine-tuning</span></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
        
         <!-- Projects Section -->
         <section id="projects" class="section py-20">
@@ -1329,16 +1461,16 @@
                     </div>
                     <h3 class="text-xl font-bold mb-2">${project.title}</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">${project.description}</p>
-                    <a href="${project.url}" target="_blank" class="read-more">
+                    <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="read-more">
                         find more   
                         <i data-lucide="github"></i>
                     </a>
                     <div class="repo-actions">
-                        <a href="${project.url}/stargazers" target="_blank" class="repo-action">
+                        <a href="${project.url}/stargazers" target="_blank" rel="noopener noreferrer" class="repo-action">
                             <i data-lucide="star"></i>
                             Star
                         </a>
-                        <a href="${project.url}/fork" target="_blank" class="repo-action">
+                        <a href="${project.url}/fork" target="_blank" rel="noopener noreferrer" class="repo-action">
                             <i data-lucide="git-fork"></i>
                             Fork
                         </a>

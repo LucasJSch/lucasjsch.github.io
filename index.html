@@ -307,7 +307,8 @@
             background: rgba(31, 31, 31, 0.85);
         }
 
-        .case-study-card img {
+        .case-study-card img,
+        .case-study-card video {
             width: 100%;
             height: 12rem;
             object-fit: cover;
@@ -819,7 +820,6 @@
                     <li><a href="#skills">My main tech stack</a></li>
                     <li><a href="#timeline">Work Experience</a></li>
                     <li><a href="#case-studies">Case Studies</a></li>
-                    <li><a href="#projects">Projects</a></li>
                 </ul>
                 <div class="nav-actions">
                     <button type="button" id="themeToggle" class="p-2 rounded-lg bg-light dark:bg-dark text-dark dark:text-light w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-gray-600" aria-label="Toggle dark mode">
@@ -1224,9 +1224,9 @@
             <div class="container mx-auto px-4 max-w-6xl">
                 <h2 class="text-3xl font-bold mb-4 text-center font-about-me">Selected Case Studies</h2>
                 <p class="max-w-2xl mx-auto text-center text-gray-600 dark:text-gray-400 mb-12">Selected technical work across industrial AI, edge computer vision, and applied model fine-tuning.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <article class="case-study-card">
-                        <img src="assets/asr_systems.png" alt="Audio waveform representing speech systems" />
+                        <img src="assets/embedded-industrial-ai-assistant.png" alt="Technicians using tablets on an industrial shop floor" />
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3">Embedded Industrial AI Assistant</h3>
                             <p class="text-gray-700 dark:text-gray-300">Designed an assistant for heavy equipment environments, combining speech recognition, retrieval-augmented generation, text-to-speech, and domain-specific language-model fine-tuning.</p>
@@ -1234,32 +1234,38 @@
                         </div>
                     </article>
                     <article class="case-study-card">
-                        <img src="assets/nvidia_deepstream.png" alt="Edge computer vision pipeline visualisation" />
+                        <img src="assets/golf-swing-analysis.jpg" alt="Golf swing analysis application interface" />
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">Edge Computer Vision Systems</h3>
-                            <p class="text-gray-700 dark:text-gray-300">Developed accelerated computer-vision pipelines for NVIDIA Jetson devices and supported their operation with deployment tooling and monitoring dashboards.</p>
-                            <div class="mt-4"><span class="case-study-tag">PyTorch</span><span class="case-study-tag">OpenCV</span><span class="case-study-tag">CUDA</span><span class="case-study-tag">Jetson</span></div>
+                            <h3 class="text-xl font-bold mb-3">Golf Swing Analysis App</h3>
+                            <p class="text-gray-700 dark:text-gray-300">An advanced golf swing analysis system using MediaPipe pose detection, OpenCV, and NumPy. It identifies swing phases with a custom-trained vision-transformer classifier and provides annotated visualizations.</p>
+                            <p class="mt-3 text-gray-700 dark:text-gray-300">Built with an extensible architecture, REST-ready FastAPI interface, CLI, structured logging, and pytest coverage. The deployment uses AWS Lambda with RunPod GPU, and an LLM chat layer provides AI-powered swing feedback through OpenAI, Gemini, and Grok.</p>
+                            <div class="mt-4"><span class="case-study-tag">MediaPipe</span><span class="case-study-tag">OpenCV</span><span class="case-study-tag">Vision Transformers</span><span class="case-study-tag">FastAPI</span><span class="case-study-tag">AWS Serverless</span><span class="case-study-tag">LLM Chat</span></div>
                         </div>
                     </article>
                     <article class="case-study-card">
-                        <img src="assets/pose_estimator_pipeline.png" alt="Pose-estimation computer vision pipeline" />
+                        <video controls preload="metadata" playsinline aria-label="Padel video analytics demonstration">
+                            <source src="assets/padel-video-analytics.mp4" type="video/mp4" />
+                            Your browser does not support embedded video.
+                        </video>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">Golf Swing Analysis</h3>
-                            <p class="text-gray-700 dark:text-gray-300">Led a freelance mobile golf-swing analysis project, working with YOLO, DETR, and vision transformers, including model selection and fine-tuning.</p>
-                            <div class="mt-4"><span class="case-study-tag">YOLO</span><span class="case-study-tag">DETR</span><span class="case-study-tag">Vision Transformers</span><span class="case-study-tag">Fine-tuning</span></div>
+                            <h3 class="text-xl font-bold mb-3">Padel Video Analytics | Player Tracking &amp; Court Heatmaps</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Built and deployed a Python analytics pipeline on NVIDIA Jetson that turns fixed-camera match footage into annotated video, player tracking data, and court heatmaps.</p>
+                            <p class="mt-3 text-gray-700 dark:text-gray-300">Integrated court calibration, 2D ball tracking, pose overlays, and player identity linking. Generated time-weighted heatmaps for all four players, including observation coverage and explicit handling of missing data.</p>
+                            <div class="mt-4"><span class="case-study-tag">Python</span><span class="case-study-tag">NVIDIA Jetson</span><span class="case-study-tag">Player Tracking</span><span class="case-study-tag">Pose Estimation</span><span class="case-study-tag">Heatmaps</span></div>
                         </div>
                     </article>
-                </div>
-            </div>
-        </section>
-
-       
-        <!-- Projects Section -->
-        <section id="projects" class="section py-20">
-            <div class="container mx-auto px-4 max-w-6xl projects-container">
-                <h2 class="text-3xl font-bold mb-12 text-center font-about-me">Projects</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project tiles will be dynamically inserted here -->
+                    <article class="case-study-card">
+                        <video controls preload="metadata" playsinline aria-label="Fabric rolls warehouse analytics video">
+                            <source src="assets/fabric-rolls-warehouse-analytics.mp4" type="video/mp4" />
+                            Your browser does not support embedded video.
+                        </video>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Fabric Rolls Warehouse Analytics</h3>
+                            <p class="text-gray-700 dark:text-gray-300">An end-to-end computer-vision pipeline for indoor logistics and retail-style scenes, using fabric rolls as the primary inventory object and people as co-occurring actors.</p>
+                            <p class="mt-3 text-gray-700 dark:text-gray-300">Transforms ordered frame streams from disk, extracted video, or upstream capture into versioned, machine-consumable annotations and optional visual deliverables.</p>
+                            <div class="mt-4"><span class="case-study-tag">Computer Vision</span><span class="case-study-tag">Object Detection</span><span class="case-study-tag">Tracking</span><span class="case-study-tag">Video Analytics</span></div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -1406,86 +1412,6 @@
             });
         });
 
-        // Project data
-        const projects = [
-            {
-                title: "Face blurring app",
-                description: "App to automatially blur faces in images or video sequences.",
-                url: "https://github.com/LucasJSch/face_blurring/",
-                image: "assets/face_blur_app.png"
-            },
-            {
-                title: "Live people detection using NVidia Deepstream and C++",
-                description: "Live processing pipeline using peoplenet to detect people in specific regions.",
-                url: "https://github.com/LucasJSch/deepstream_challenge",
-                image: "assets/op_challenge.jpg"
-            },
-            {
-                title: "Pose estimator pipeline",
-                description: "Object Detection + Pose estimator pipeline for live camera streams using YOLO models.",
-                url: "https://github.com/LucasJSch/pose_estimator_pipeline",
-                image: "assets/pose_estimator_pipeline.png"
-            },
-            {
-                title: "Spaceship navigation",
-                description: "Spaceship navigation animation using WebGL, JavaScript and GLSL.",
-                url: "https://lucasjsch.github.io/sistemas_graficos/TP2/implementacion/index.html",
-                image: "assets/spaceship_navigation.png"
-            },
-            {
-                title: "Terrarium simulator",
-                description: "A terrarium simulator with different kinds of bugs that reproduce, die and interact with each other in each simulation cycle. Implemented in pure C++.",
-                url: "https://github.com/LucasJSch/terrarium_simulator/",
-                image: "assets/terrarium.png"
-            },
-            {
-                title: "CORDIC algorithm visualizer for FPGA using VHDL",
-                description: "VHDL implementation of CORDIC rotation of 3D figure & data-serialization to VGA screen.",
-                url: "https://github.com/LucasJSch/vhdl_cordic_vga",
-                image: "https://opengraph.githubassets.com/1/lucasjsch/vhdl_cordic_vga"
-            }
-        ];
-
-        // Function to create project tiles
-        function createProjectTiles() {
-            const projectsContainer = document.querySelector('#projects .grid');
-            projects.forEach(project => {
-                const tile = document.createElement('div');
-                tile.className = 'project-tile';
-                tile.innerHTML = `
-                    <div class="project-thumbnail mb-4">
-                        <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">
-                        <div class="redirect-icon">
-                            <i data-lucide="external-link"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">${project.title}</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">${project.description}</p>
-                    <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="read-more">
-                        find more   
-                        <i data-lucide="github"></i>
-                    </a>
-                    <div class="repo-actions">
-                        <a href="${project.url}/stargazers" target="_blank" rel="noopener noreferrer" class="repo-action">
-                            <i data-lucide="star"></i>
-                            Star
-                        </a>
-                        <a href="${project.url}/fork" target="_blank" rel="noopener noreferrer" class="repo-action">
-                            <i data-lucide="git-fork"></i>
-                            Fork
-                        </a>
-                    </div>
-                `;
-                const thumbnail = tile.querySelector('.project-thumbnail');
-                thumbnail.addEventListener('click', () => window.open(project.url, '_blank'));
-                projectsContainer.appendChild(tile);
-            });
-            lucide.createIcons();
-        }
-
-        // Call the function to create project tiles
-        createProjectTiles();
-        
     </script>
 </body>
 </html>

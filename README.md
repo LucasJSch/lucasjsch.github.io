@@ -22,6 +22,5 @@ The workflow checks pull requests without deploying. Pushes to `main` and manual
 workflow runs build and deploy `out/`. No base path is required for this user site.
 No Node server, API routes, or server image optimizer is needed in production.
 
-Visual structure inspired by https://owaisasghar.github.io/; implemented locally
-with Lucas’s own portfolio content and media. No reference-site personal data or
+Implemented locally with Lucas’s own portfolio content and media. No reference-site personal data or
 source bundle is included. External skill icons still require their image hosts.
